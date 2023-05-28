@@ -11,12 +11,8 @@ const middleware = async (connection) => {
     // conversation has something if the message is pure text and
     // was sent by other person
     if (conversation) {
-      const response = chatbot(conversation);
-      await connection.sendMessage(remoteJid, { text: response });
-
-      console.log(key);
-      console.log('\n\n');
-      console.log(message);
+      const response = chatbot(remoteJid, conversation);
+      if (response) {await connection.sendMessage(remoteJid, { text: response })}
     }
 
     return
