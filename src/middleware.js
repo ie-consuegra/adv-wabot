@@ -13,6 +13,10 @@ const middleware = async (connection) => {
     if (conversation) {
       const response = chatbot(conversation);
       await connection.sendMessage(remoteJid, { text: response });
+
+      console.log(key);
+      console.log('\n\n');
+      console.log(message);
     }
 
     return

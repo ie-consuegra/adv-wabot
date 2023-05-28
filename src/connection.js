@@ -1,7 +1,7 @@
 const { default: makeWASocket, DisconnectReason, useMultiFileAuthState } = require('@whiskeysockets/baileys');
 
 async function connectToWhatsApp() {
-  const {state, saveCreds } = await useMultiFileAuthState('./assets/auth/baileys');
+  const {state, saveCreds } = await useMultiFileAuthState('./bot_sessions');
 
   const sock = makeWASocket({
     printQRInTerminal: true,
